@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="search-bar">
+                <input type="text" id="city-input" placeholder="Search for a city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>What to include:
+
+Who are your customers?
+How do you deliver value?
+What is your core offering?
+Distribution channel strategy
+
+This is structural logic.
+
+            <div class="current-location">
+                <button id="location-btn"><i class="fas fa-map-marker-alt" title="Use current location"></i></button>
+            </div>
+        </header>
+
+        <main class="weather-content hidden" id="weather-content">
+            <div class="current-weather highlight-card">
+                <div class="weather-main">
+                    <h1 id="city-name">London, UK</h1>
+                    <p id="date">Mon, 12 Oct</p>
+                    <div class="temperature">
+                        <span id="temp">22</span>°C
+                    </div>
+                    <p id="weather-desc">Partly Cloudy</p>
+                </div>
+                <div class="weather-icon">
+                    <img id="w-icon" src="https://openweathermap.org/img/wn/02d@4x.png" alt="weather icon">
+                </div>
+            </div>
+
+            <div class="weather-details grid-view">
+                <div class="detail-card glassmorphism">
+                    <i class="fas fa-wind"></i>
+                    <p>Wind Speed</p>
+                    <h3 id="wind-speed">5 km/h</h3>
+                </div>
+                <div class="detail-card glassmorphism">
+                    <i class="fas fa-tint"></i>
+                    <p>Humidity</p>
+                    <h3 id="humidity">65%</h3>
+                </div>
+                <div class="detail-card glassmorphism">
+                    <i class="fas fa-eye"></i>
+                    <p>Visibility</p>
+                    <h3 id="visibility">10 km</h3>
+                </div>
+                <div class="detail-card glassmorphism">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <p>Pressure</p>
+                    <h3 id="pressure">1012 hPa</h3>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items will be injected here via JS -->
+                </div>
+            </div>
+        </main>
+        
+        <div class="loading hidden" id="loading-state">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+        
+        <div class="error-message hidden" id="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="error-text">City not found. Please try again.</p>
+        </div>
+        
+        <div class="empty-state" id="empty-state">
+            <i class="fas fa-cloud-sun"></i>
+            <h2>Welcome to WeatherDash</h2>
+            <p>Search for a city to get real-time weather information and forecasts.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
